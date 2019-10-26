@@ -2,24 +2,24 @@ import Darwin
 
 // Fonction permettant de demander à l'utilisateur d'entrer un nombre et de le convertir en entier
 func input() -> Int {
-    let strData = readLine();
+    let strData = readLine()
 
     return Int(strData!)!
 }
 
-var count_exec: Int
-var number_one: Int
-var number_two: Int
+var countExec: Int
+var numberOne: Int
+var numberTwo: Int
 var operation: Int
 var result: Int
 
-count_exec = 0
-number_one = 0
-number_two = 0
+countExec = 0
+numberOne = 0
+numberTwo = 0
 operation = 0
 result = 0
 
-func menu(){
+func menu() {
     let text = """
                --- Menu ---
                1. Addition
@@ -34,25 +34,25 @@ func menu(){
     print(text)
 }
 
-func calc(number_one: Int, number_two: Int, operation: Int) {
+func calc(numberOne: Int, numberTwo: Int, operation: Int) {
     switch operation {
     case 1:
-        result = number_one + number_two
+        result = numberOne + numberTwo
 
     case 2:
-        result = number_one - number_two
+        result = numberOne - numberTwo
 
     case 3:
-        result = number_one * number_two
+        result = numberOne * numberTwo
 
     case 4:
-        result = number_one / number_two
+        result = numberOne / numberTwo
 
     case 5:
-        result = number_one % number_two
+        result = numberOne % numberTwo
 
     case 6:
-        result = number_one * number_two
+        result = numberOne * numberTwo
 
     default:
         result = 0
@@ -63,32 +63,30 @@ func calc(number_one: Int, number_two: Int, operation: Int) {
 func print_result(result: Int) {
     if result == 0 {
         print("Une erreur est survenue.")
-    }
-    else {
+    } else {
         print("\nLe résultat de l'opération est : \(result)\n")
     }
 }
 
 func run() {
-    count_exec =  count_exec + 1
+    countExec += 1
     print("Entrez le premier nombre :")
-    number_one = input()
+    numberOne = input()
     if operation == 6 {
-        number_two = number_one
-    }
-    else {
+        numberTwo = numberOne
+    } else {
         print("Entrez le deuxième nombre :")
-        number_two = input()
+        numberTwo = input()
     }
-    calc(number_one: number_one, number_two: number_two, operation: operation)
-    print("Vous avez effectué \(count_exec) calcul(s)")
+    calc(numberOne: numberOne, numberTwo: numberTwo, operation: operation)
+    print("Vous avez effectué \(countExec) calcul(s)")
     new_exec()
 }
 
 func new_exec() {
     print("Voulez-vous effectuer un nouveau calcul ? (y ou n)")
-    let q_new_exec: String? = readLine()
-    switch q_new_exec {
+    let qNewExec: String? = readLine()
+    switch qNewExec {
     case "y":
         welcome()
     case "n":
