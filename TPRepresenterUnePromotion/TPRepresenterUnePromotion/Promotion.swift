@@ -10,17 +10,12 @@ class Promotion {
     }
 
     func rechercherEtudiant(nom: String, prenom: String) -> Bool {
-        var status: Bool = false
-        for etu in etudiants {
-            if etu.nom == nom && etu.prenom == prenom {
-                status = true
-                // break permet de sortir de la boucle for quand status passe à true et donc
-                // on fait le return, on évite de continuer inutilement la boucle
-                break
-            }
-        }
-        return status
+        return etudiants.contains(where: { $0.nom == nom && $0.prenom == prenom })
     }
 
-    func affichePromotion() {}
+    func affichePromotion() {
+        for etu in etudiants {
+            etu.affiche()
+        }
+    }
 }
