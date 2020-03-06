@@ -57,10 +57,10 @@ func calc(numberOne: Int, numberTwo: Int, operation: Int) {
     default:
         result = 0
     }
-    print_result(result: result)
+    printResult(result: result)
 }
 
-func print_result(result: Int) {
+func printResult(result: Int) {
     if result == 0 {
         print("Une erreur est survenue.")
     } else {
@@ -80,10 +80,10 @@ func run() {
     }
     calc(numberOne: numberOne, numberTwo: numberTwo, operation: operation)
     print("Vous avez effectué \(countExec) calcul(s)")
-    new_exec()
+    newExec()
 }
 
-func new_exec() {
+func newExec() {
     print("Voulez-vous effectuer un nouveau calcul ? (y ou n)")
     let qNewExec: String? = readLine()
     switch qNewExec {
